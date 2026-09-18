@@ -1287,16 +1287,6 @@ i love you more than i know how to say. and if you ever forget, come back to thi
 
 play song cinderrella by mac miller terus foto 1 itu buat landing page pertama, foto dua buat landing page kedua  nah aku mau gamau keliatan ai nya, and then smooth the transision dan animasinya
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/58a8fdaf-ad69-44f4-a551-b19ee96634d5).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).

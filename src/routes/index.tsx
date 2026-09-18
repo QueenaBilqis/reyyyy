@@ -4,9 +4,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import envelopeFront from "@/assets/letter-envelope-front.png.asset.json";
 import envelopeOpen from "@/assets/letter-envelope-open.png.asset.json";
+import memory3 from "@/assets/memory-3.png.asset.json";
+import memory4 from "@/assets/memory-4.png.asset.json";
+import memory5 from "@/assets/memory-5.png.asset.json";
+import memory6 from "@/assets/memory-6.png.asset.json";
+import memory7 from "@/assets/memory-7.png.asset.json";
+import memory8 from "@/assets/memory-8.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const pages = ["opening", "true love", "the color black", "dear rey"];
+const memories = [memory3, memory4, memory5, memory6, memory7, memory8];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -113,7 +120,15 @@ function LoveLetter() {
                 </p>
                 <p className="mt-7 font-sans text-[10px] uppercase tracking-[.32em] text-primary">my favorite person · my safest place · the one i keep choosing</p>
               </div>
-              <div className="letter-reveal mt-12 w-full max-w-3xl border-y border-primary/20 py-5 font-sans text-[9px] uppercase tracking-[.38em] text-muted-foreground" style={{ animationDelay: "250ms" }}>
+              <div className="letter-reveal mt-10 grid w-full max-w-4xl grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3" style={{ animationDelay: "220ms" }}>
+                {memories.map((memory, index) => (
+                  <figure key={memory.asset_id} className={`group relative overflow-hidden border border-primary/20 bg-card p-1 shadow-sm ${index % 2 ? "sm:translate-y-3" : "sm:-translate-y-1"}`}>
+                    <img src={memory.url} alt={`A memory with Rey ${index + 1}`} className="aspect-square w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" />
+                    <figcaption className="absolute bottom-2 left-2 font-sans text-[7px] uppercase tracking-[.2em] text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100">0{index + 1}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <div className="letter-reveal mt-8 w-full max-w-3xl border-y border-primary/20 py-5 font-sans text-[9px] uppercase tracking-[.38em] text-muted-foreground" style={{ animationDelay: "300ms" }}>
                 made with all my love, for rey 🖤 · made by ecliwcze
               </div>
             </section>

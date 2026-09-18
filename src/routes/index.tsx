@@ -94,17 +94,19 @@ function LoveLetter() {
           </Button>
         </div>
 
-        <div className={`fixed right-4 top-16 z-40 w-[min(88vw,360px)] origin-top-right transition-all duration-500 ${musicOpen ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none -translate-y-3 scale-95 opacity-0"}`}>
-          <iframe
-            title="Cinderella by Mac Miller on Spotify"
-            src="https://open.spotify.com/embed/track/2lpygKqzPFtItQ4ss3cgfb?utm_source=generator&theme=0"
-            width="100%"
-            height="152"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            className="rounded-md border-0 shadow-2xl"
-          />
-        </div>
+        {musicOpen && (
+          <div className="fixed right-4 top-16 z-40 w-[min(88vw,360px)] origin-top-right animate-in fade-in zoom-in-95 duration-500">
+            <iframe
+              title="Cinderella by Mac Miller on Spotify"
+              src="https://open.spotify.com/embed/track/2lpygKqzPFtItQ4ss3cgfb?utm_source=generator"
+              width="100%"
+              height="152"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              className="rounded-md border-0 shadow-2xl"
+            />
+          </div>
+        )}
 
         <div className="relative min-h-screen overflow-hidden">
           <div className="flex transition-transform duration-1000 ease-[cubic-bezier(.65,0,.35,1)]" style={{ transform: `translateX(-${page * 100}%)` }}>
@@ -120,7 +122,7 @@ function LoveLetter() {
                 </p>
                 <p className="mt-7 font-sans text-[10px] uppercase tracking-[.32em] text-primary">my favorite person · my safest place · the one i keep choosing</p>
               </div>
-              <div className="letter-reveal mt-10 grid w-full max-w-4xl grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3" style={{ animationDelay: "220ms" }}>
+              <div className="letter-reveal mt-10 grid w-full max-w-4xl grid-cols-3 gap-2 pb-16 sm:grid-cols-6 sm:gap-3 sm:pb-0" style={{ animationDelay: "220ms" }}>
                 {memories.map((memory, index) => (
                   <figure key={memory.asset_id} className={`group relative overflow-hidden border border-primary/20 bg-card p-1 shadow-sm ${index % 2 ? "sm:translate-y-3" : "sm:-translate-y-1"}`}>
                     <img src={memory.url} alt={`A memory with Rey ${index + 1}`} className="aspect-square w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" />
